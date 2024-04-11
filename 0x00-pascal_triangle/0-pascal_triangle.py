@@ -1,6 +1,20 @@
-from pascal_triangle import pascal_triangle
+#!/usr/bin/python3
+"""
+0. Pascal's Triangle for this project
+"""
 
-# Example: Print Pascal's Triangle with size 5
-triangle = pascal_triangle(5)
-for row in triangle:
-    print(row)
+
+def pascal_triangle(n):
+    """Create the function def pascal_triangle(n): that returns list of lists
+    of integers representing the Pascal’s triangle of n
+    """
+    res = []
+    if n > 0:
+        for i in range(1, n + 1):
+            level = []
+            C = 1
+            for j in range(1, i + 1):
+                level.append(C)
+                C = C * (i - j) // j
+            res.append(level)
+    return res
