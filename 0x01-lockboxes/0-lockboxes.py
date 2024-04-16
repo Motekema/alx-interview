@@ -59,7 +59,7 @@ def canUnlockAll(boxes):
 
 
 def main():
-    """Entry point"""
+    """Entry pointed"""
     canUnlockAll([[]])
 
 
