@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def validUTF8(data):
     """ Check if the list of integers is valid UTF-8 codepoints.
     See <https://datatracker.ietf.org/doc/html/rfc3629#page-4>
