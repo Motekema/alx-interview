@@ -23,4 +23,3 @@ def makeChange(coins, total):
 
 if __name__ == "__main__":
     print(makeChange([1, 2, 25], 37))
-
