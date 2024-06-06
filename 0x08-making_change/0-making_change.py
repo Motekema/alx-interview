@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-"""
-Module for making change with minimum coins
+""" Changes that are doing module.
 """
 
 
 def makeChange(coins, total):
-    """
-    Returns the fewest number of coins needed to meet a given total amount
+    """ Determine a fewest number of coins needed to meet the given
+    amount total when given a pile of coins of different values.
     """
     if total <= 0:
         return 0
-
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
-
-    for coin in coins:
-        for i in range(coin, total + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
-
-    return dp[total] if dp[total] != float('inf') else -1
-
-
-if __name__ == "__main__":
-    print(makeChange([1, 2, 25], 37))
+    rem = total
+    coins_count = 0
+    coin_idx = 0
+    sorted_coins = sorted(coins, reverse=True)
+    n = len(coins)
+    while rem > 0:
+        if coin_idx >= n:
+            return -1
+        if rem - sorted_coins[coin_idx] >= 0:
+            rem -= sorted_coins[coin_idx]
+            coins_count += 1
+        else:
+            coin_idx += 1
+    return coins_count
